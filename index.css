@@ -58,6 +58,11 @@ label {
 #foot {
     margin-left: 50%;
     width: fit-content;
+   
+}
+
+#foot:hover {
+    background-color:brown;
 }
 
 
