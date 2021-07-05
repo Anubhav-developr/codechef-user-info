@@ -5,6 +5,7 @@
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
+    
 }
 
 #innu {
@@ -13,10 +14,9 @@
     
 }
 form {
-    margin-left: 550px;
-    margin-top: 50px;
+    margin: 0 auto;
     padding: 25px;
-    border: 1px solid rgb(25, 179, 218);
+   
     width:fit-content;
 }
 
@@ -36,12 +36,27 @@ form {
         margin-top: 17px;
       }
       
-      button:hover {background-color: #3e8e41}
+      button:hover {background-color: #8e5e3e}
       
       button:active {
         background-color: #3e8e41;
         box-shadow: 0 5px #666;
         transform: translateY(4px);
       }
+
+section{
+    background-image: url("picy.jfif");
+}
+
+label {
+
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(18, 20, 5);
+}
+
+#top{
+    padding: 100px;
+}
 
 
