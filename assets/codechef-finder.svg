@@ -1,0 +1,48 @@
+<svg
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect width="512" height="512" rx="128" fill="#0B0B0C"/>
+
+  <!-- Finder ring -->
+  <path
+    d="M350 314C377 283 392 244 392 202C392 98 307 54 214 54C126 54 70 115 70 202C70 290 133 350 216 350"
+    stroke="#F28A3D"
+    stroke-width="42"
+    stroke-linecap="round"
+  />
+
+  <!-- Angular developer-tool handle -->
+  <path
+    d="M318 326L366 374L414 326"
+    stroke="#F28A3D"
+    stroke-width="42"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Profile head -->
+  <circle
+    cx="214"
+    cy="174"
+    r="48"
+    fill="#F2F0ED"
+  />
+
+  <!-- Profile shoulders -->
+  <path
+    d="M122 302C122 250 163 220 214 220C265 220 306 250 306 302V326H122V302Z"
+    fill="#F2F0ED"
+  />
+
+  <!-- Small negative-space separation -->
+  <path
+    d="M166 224C179 235 195 241 214 241C233 241 249 235 262 224"
+    stroke="#0B0B0C"
+    stroke-width="13"
+    stroke-linecap="round"
+  />
+</svg>
