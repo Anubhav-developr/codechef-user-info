@@ -1,38 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="index.css" rel="stylesheet">
-    <script src="index.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Codechef User Finder</title>
-    <meta name="google-site-verification" content="sE_VBVaFx6GD4hRrsMltkOcRzsf2DGFd4yk4aVipVoE" />
+  <title>CodeChef User Finder — Find Profiles Instantly</title>
+
+  <meta
+    name="description"
+    content="Enter a CodeChef username and instantly open the corresponding CodeChef profile."
+  />
+  <meta name="theme-color" content="#0b0b0c" />
+
+  <meta property="og:title" content="CodeChef User Finder" />
+  <meta
+    property="og:description"
+    content="A lightweight utility for opening CodeChef profiles instantly."
+  />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:url"
+    content="https://anubhav-developr.github.io/codechef-user-info/"
+  />
+
+  <meta
+    name="google-site-verification"
+    content="sE_VBVaFx6GD4hRrsMltkOcRzsf2DGFd4yk4aVipVoE"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="index.css" />
+  <script src="index.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <div class="top" style="background-color: rgb(100, 56, 20); opacity:0.5em">
-            <img href="http://codechef.com" src="Codechef user finder.png" width="200px" style="margin-left: 42%;">
-        </div>
+  <div class="page-shell">
+    <header class="site-header" id="site-header">
+      <a
+        class="brand"
+        href="https://www.codechef.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit CodeChef"
+      >
+        <span class="brand-mark" aria-hidden="true">CC</span>
+        <span class="brand-name">CodeChef Finder</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#how-it-works">How it works</a>
+        <a
+          href="https://github.com/Anubhav-developr/codechef-user-info"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
     </header>
-    <section>
-        <div>
-            <form type="submit" id="kl" onsubmit="return false">
-              <div class="formy">
-                <div class="form-element">
-                    <label style="color: black">Enter Codechef Profile ID </label>
-                    <input type="text" id="innu" onchange="store()"></input>
-                </div>
-                <div class="form-element">
-                    <button type="submit" onclick="submitButtonClick(event)">Find User</button>
-                </div>
+
+    <main>
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="ambient-grid" aria-hidden="true"></div>
+        <div class="ambient-glow" aria-hidden="true"></div>
+
+        <div class="hero-content reveal">
+          <div class="status-line">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Fast profile routing utility</span>
+          </div>
+
+          <h1 id="hero-title">
+            Find any
+            <span>CodeChef profile.</span>
+          </h1>
+
+          <p class="hero-description">
+            Enter a CodeChef username and jump directly to the corresponding
+            profile page.
+          </p>
+
+          <div class="search-card" id="finder">
+            <div class="card-heading">
+              <div>
+                <span class="section-label">CodeChef profile</span>
+                <h2>Enter a username</h2>
               </div>
+
+              <span class="card-index">01 / 01</span>
+            </div>
+
+            <form id="finder-form" novalidate>
+              <label class="sr-only" for="username-input">
+                CodeChef username
+              </label>
+
+              <div class="input-wrapper">
+                <span class="input-prefix" aria-hidden="true">@</span>
+
+                <input
+                  id="username-input"
+                  name="username"
+                  type="text"
+                  placeholder="username"
+                  autocomplete="off"
+                  autocapitalize="none"
+                  spellcheck="false"
+                  maxlength="50"
+                  required
+                />
+
+                <span class="input-state" id="input-state" aria-hidden="true">
+                  ↵
+                </span>
+              </div>
+
+              <button class="search-button" type="submit">
+                <span>Find User</span>
+                <span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+
+              <p class="form-message" id="form-message" role="status"></p>
             </form>
+
+            <div class="card-footer">
+              <span>Direct routing</span>
+              <span class="footer-line" aria-hidden="true"></span>
+              <span>100% client-side</span>
+            </div>
+          </div>
+
+          <p class="hero-note">
+            No login. No database. Just a faster way to reach a profile.
+          </p>
         </div>
-    </section>
-    <footer><div id="foot" style="background-color: rgb(211, 245, 19); opacity:0.5em"><marquee behaviour="left">Made by hands with Anubhav-developr😅</a></marquee>
-        <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=786066fb3f6404ea271f3825f9f939df0cea1bc1'></script>
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/859252/t/5"></script></div></footer>
+
+        <div class="hero-meta" aria-hidden="true">
+          <span>HTML / CSS / JS</span>
+          <span>EST. 2024</span>
+        </div>
+      </section>
+
+      <section class="how-section content-section reveal" id="how-it-works">
+        <div class="section-intro">
+          <span class="section-label">The workflow</span>
+          <h2>Three steps.<br />One direct route.</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-icon" aria-hidden="true">⌕</div>
+            <h3>Enter username</h3>
+            <p>Type the CodeChef handle you want to find.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-icon" aria-hidden="true">→</div>
+            <h3>Resolve handle</h3>
+            <p>The username is trimmed and safely encoded.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-icon" aria-hidden="true">↗</div>
+            <h3>Open profile</h3>
+            <p>You are sent directly to the CodeChef profile.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="features-section content-section reveal">
+        <div class="section-intro">
+          <span class="section-label">Built for focus</span>
+          <h2>Small utility.<br />Clear purpose.</h2>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <span class="feature-symbol">01</span>
+            <h3>Instant access</h3>
+            <p>Skip manual navigation and reach profiles with one action.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-symbol">02</span>
+            <h3>No login required</h3>
+            <p>There is no account layer, tracking flow, or unnecessary setup.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-symbol">03</span>
+            <h3>Lightweight by design</h3>
+            <p>Built with the browser fundamentals: HTML, CSS, and JavaScript.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="preview-section content-section reveal">
+        <div class="preview-copy">
+          <span class="section-label">Under the hood</span>
+          <h2>A simple idea,<br />carefully executed.</h2>
+          <p>
+            CodeChef User Finder keeps the experience focused: capture the
+            username, construct the destination, and let the browser handle the
+            route.
+          </p>
+        </div>
+
+        <div class="browser-preview" aria-label="Product preview">
+          <div class="browser-topbar">
+            <div class="browser-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="browser-url">codechef.com/users/anubhav</span>
+          </div>
+
+          <div class="browser-content">
+            <div class="preview-brand">
+              <span class="brand-mark small" aria-hidden="true">CC</span>
+              <span>CodeChef Finder</span>
+            </div>
+
+            <span class="section-label">CodeChef profile</span>
+            <div class="preview-input">@anubhav</div>
+
+            <div class="preview-route">
+              <span>HANDLE</span>
+              <span class="route-line" aria-hidden="true"></span>
+              <span>PROFILE</span>
+            </div>
+
+            <div class="preview-profile">
+              <span class="profile-avatar">A</span>
+              <div>
+                <strong>@anubhav</strong>
+                <small>CodeChef profile destination</small>
+              </div>
+              <span class="profile-arrow">↗</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stack-section content-section reveal">
+        <div class="section-intro">
+          <span class="section-label">Technology</span>
+          <h2>Nothing hidden<br />behind the interface.</h2>
+        </div>
+
+        <div class="stack-list">
+          <div class="stack-item">
+            <span class="stack-number">01</span>
+            <strong>HTML5</strong>
+            <span>Semantic structure</span>
+          </div>
+
+          <div class="stack-item">
+            <span class="stack-number">02</span>
+            <strong>CSS3</strong>
+            <span>Responsive presentation</span>
+          </div>
+
+          <div class="stack-item">
+            <span class="stack-number">03</span>
+            <strong>JavaScript</strong>
+            <span>Input and routing logic</span>
+          </div>
+
+          <div class="stack-item">
+            <span class="stack-number">04</span>
+            <strong>CodeChef</strong>
+            <span>Profile destination</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <span class="brand-name">CodeChef Finder</span>
+        <p>Built with HTML, CSS & JavaScript.</p>
+      </div>
+
+      <div class="footer-links">
+        <a
+          href="https://github.com/Anubhav-developr/codechef-user-info"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+        <a
+          href="https://anubhav-developr.github.io/codechef-user-info/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Live project ↗
+        </a>
+      </div>
+
+      <p class="footer-credit">Made by Anubhav Mishra</p>
+    </footer>
+  </div>
 </body>
 </html>
